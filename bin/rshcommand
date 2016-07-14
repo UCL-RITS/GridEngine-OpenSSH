@@ -1,0 +1,3 @@
+#!/bin/ksh 
+[ -z "${HIGHHEELS}" ] && exec /usr/bin/ssh "$@"
+exec "${HIGHHEELS}" "$3" "$2"  

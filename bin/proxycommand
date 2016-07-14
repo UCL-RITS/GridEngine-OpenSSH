@@ -1,0 +1,5 @@
+#!/bin/ksh
+export HIGHHEELS=/usr/bin/nc
+[ "0$2" -eq 22 ] || exec ${HIGHHEELS} "$@"
+[ -n "$JOB_ID" ] || exec qrsh -@ "${SSH_SGE_REQUEST:-$(dirname $0)/../etc/ssh_request}" -l "h=$1" "$(dirname $0)/sshorig"
+exec qrsh -V -inherit "$1"  "$(dirname $0)/sshorig"

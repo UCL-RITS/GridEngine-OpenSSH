@@ -1,0 +1,4 @@
+#!/bin/ksh
+SHELL=$(getent passwd "${USER}" |awk -F: '{print $7}')
+[ -z "${SSH_ORIGINAL_COMMAND}" ] || exec "${SHELL}" -c "${SSH_ORIGINAL_COMMAND}"
+exec -a "-${SHELL}" "${SHELL}"

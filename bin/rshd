@@ -1,0 +1,8 @@
+#!/bin/ksh
+export QRSHSETUP=/var/run/sge-qrsh-setup.
+for CHECKORPHAN in $(ls -1 ${QRSHSETUP}* 2>/dev/null |sed -e "s#^${QRSHSETUP}##")
+do 
+   kill -0 ${CHECKORPHAN}|| rm ${QRSHSETUP}${CHECKORPHAN}
+done
+echo "${SGE_JOB_SPOOL_DIR}" >${QRSHSETUP}${PPID}
+exec /usr/sbin/sshd -i -f ${1:-/etc/ssh/sshd_config} -o "ForceCommand=exec ${SGE_ROOT}/utilbin/${SGE_ARCH}/qrsh_starter ${SGE_JOB_SPOOL_DIR}"
