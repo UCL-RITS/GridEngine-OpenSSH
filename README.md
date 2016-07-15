@@ -1,8 +1,8 @@
-# OpenSSH-GridEngine integration
+# GridEngine-OpenSSH integration
 
 ##Existing integrations
 
-On a typical grid engine base cluster grid-engine and ssh interact in two ways:
+On a typical grid engine based cluster grid-engine and ssh interact in two ways:
 
 * When qrsh uses ssh as an rsh_command to launch tasks on a node.
 
