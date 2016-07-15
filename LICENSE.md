@@ -1,7 +1,7 @@
 The MIT License (MIT)
 =====================
 
-Copyright © 2016` `UCL`
+Copyright ©` 2016` `UCL`
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
